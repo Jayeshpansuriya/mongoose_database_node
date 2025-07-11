@@ -21,8 +21,10 @@ const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     age: { type: Number, required: true, min: 5, max: 120 },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
+    // createdAt: { type: Date, default: Date.now },
+    // updatedAt: { type: Date, default: Date.now }
+},{
+    timestamps: true,
 });
 
 
@@ -32,7 +34,7 @@ userSchema.pre(["updateOne","updateMany","findOneAndUpdate"],function(next){
      next();
 })
 
-//?step 3 to create a model
+//?step 3 to create a model 
 const Users = mongoose.model("User", userSchema);
 
 
