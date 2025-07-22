@@ -6,8 +6,8 @@ mongoose.set("debug", true)
 try {
 
     await mongoose.connect("mongodb://localhost:27017/mongoose_middleware", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+        // useNewUrlParser: true,
+        // useUnifiedTopology: true,
     });
 
 } catch (error) {
